@@ -86,6 +86,10 @@ nav {
   gap: 0.5rem;
 }
 
+#bcrumb {
+	transition: none;
+}
+
 a {
   text-decoration: none; /* pas de soulignage !! c'est laid */
   transition: all 0.4s ease-out;
