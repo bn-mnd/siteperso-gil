@@ -1,0 +1,203 @@
+html {
+  margin: 1.5em;
+  --accent-color: rgb(0, 0, 139);
+  --visited-color: rgb(112, 41, 99);
+	--active-breadcrumb-page-color: #3B3B3B;
+
+  --default-font: "Oswald", serif;
+  --sidebar-font: "Verdana", sans-serif;
+  --title-font: "Arial", sans-serif;
+}
+
+#header-body {
+  max-width: 890px;
+  margin: auto;
+}
+
+/* https://fonts.google.com/specimen/Oswald> */
+
+/*à faire: ajouter des séparateurs (des slash) entre les onglets OK */
+
+/* tout aligner à gauche OK */
+/* merci: https://stackoverflow.com/questions/10972096/unordered-list-not-aligning-all-the-way-to-the-left-in-a-div */
+/* https://stackoverflow.com/questions/63184650/how-to-set-separator-between-list-element-properly-with-css-and-html */
+
+#menu ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#menu ul li {
+  margin: 0;
+  text-align: start;
+  display: inline;
+
+  font-size: 1.33em;
+  text-transform: lowercase;
+  display: contents;
+  font-family: var(--default-font);
+  font-weight: 400;
+  line-height: 1em;
+
+  margin-right: 1em;
+  font-size: 25px;
+  color: var(--accent-color);
+}
+
+#menu li + li:before {
+  content: '/';
+  color: rgb(192, 192, 192) /* gris clair */
+}
+
+#menu-hr {
+  border-style: dotted none none;
+  border-width: 1.5px;
+  margin: 20px;
+  color: gray;
+  line-height: 1;
+}
+
+#site-title {
+  text-align: center;
+ 
+  font-size: 1.6em;
+  font-style: normal;
+  font-weight: normal;
+  font-family: var(--default-font);
+  
+  line-height: 1em;
+  text-transform: uppercase;
+}
+
+#site-title a {
+  border-bottom: none;
+  color: black;
+}
+
+/* https://developer.mozilla.org/fr/docs/Web/CSS/Guides/Transitions/Using */
+
+nav {
+  display: flex;
+  gap: 0.5rem;
+}
+
+a {
+  text-decoration: none; /* pas de soulignage !! c'est laid */
+  transition: all 0.4s ease-out;
+} /* à régler: le texte qui redevient bleu accent qd on met le curseur sur un onglet alors qu'il a déjà été visité */
+
+a:hover, a:focus {
+  color: black;
+}
+
+/* bof ça désaligne le titre de sidebar left et sidebar right */
+.sidebar-left, .breadcrumb-path, p {
+/*  margin: 0.9em;  solution un peu bête pour que ça reste aligné sous le tag hr */
+}
+
+#repartition-articles-blog, #indications {
+	font-family: sans-serif;
+}
+
+/* le breadcrumb! */
+
+.breadcrumb-path {
+  color: #aaa;
+  background: #f3f3f3;
+  padding: .25em .6em .35em .5em;
+  font-family: "Verdana", sans-serif;
+  border-left: 10px solid lightgray;
+}
+
+.breadcrumbs {
+	padding: 0px;
+	font-family: sans-serif;
+	display: inline-block;
+}
+
+.breadcrumbs-item {
+	display: inline-block;
+}
+
+/* on sélectionne tous les éléments dans le breadcrumb sauf le dernier (notre séparateur ne s'affichera pas après celui-ci) */
+/* ::after est une sorte d'élément virtuel créé par CSS qui contient le symbole qui sépare chaque élément */
+.breadcrumbs-item:not(:last-child)::after {
+	content: '\203a';
+	margin: 0 5 px;
+	color: #525252;
+}
+
+.breadcrumbs-link, .breadcrumbs-link:visited {
+	text-decoration: none;
+	color: #aaa;
+}
+
+.breadcrumbs-link-active {
+  text-decoration: none;
+  color: var(--active-breadcrumb-page-color);
+  font-weight: 500;
+}
+
+.breadcrumbs-link:hover {
+	text-decoration: underline;
+}
+
+/* fini. merci https://www.youtube.com/watch?v=SuGMFYCWXZg */
+/* merci https://developer.mozilla.org/en-US/docs/Web/CSS/How_to/Layout_cookbook/Breadcrumb_navigation */
+
+#nouveautes, #sites-externes {
+	margin: 50px;	/* pr que ça soit centré */
+}
+
+p {
+  font-family: "Verdana", sans-serif;
+}
+
+.main-layout {
+  position: relative;
+}
+
+.sidebar-left {
+  position: absolute;
+  right: calc(96% + 7rem);
+  top: 0;
+}
+
+.sidebar-right {
+  position: absolute;
+  left: calc(100% + 7rem);
+  top: 0;
+}
+
+.sidebar-left, .sidebar-right {
+ 	width: 20rem;
+  font-family: var(--sidebar-font);
+}
+
+#titre, #sous-titre-h4 {
+	font-family: var(--title-font);
+}
+
+#end-of-page {
+  border-style: dotted none none;
+  border-width: 1.5px;
+  margin: 20px;
+  color: gray;
+  line-height: 1;
+}
+
+#footer-notes {
+  color: var(--accent-color);
+  text-align: center;
+  font-family: "Verdana", sans-serif;
+}
+
+/* comment from a redditor: */
+/* by default <hr> tags are full width. */
+/* What you're seeing is that the body by default has a margin applied */
+/* , causing it to look like it isn't spanning the full width */
