@@ -18,7 +18,7 @@ li.projet {
 	font-weight: 500;
 }
 
-li.projet:not(:last-of-type) {
+li.projet {
 	border-bottom: 1.5px solid var(--border-color);
 	padding-bottom: 5px;
 }
@@ -29,6 +29,9 @@ li.projet:not(:last-of-type) {
 
 #desc-projet {
 	font-size: 0.8em;
+}
+
+#desc-projet:not(:last-of-type) {
 	border-bottom: 1px dotted var(--border-color);
 	padding-bottom: 20px;
 }
