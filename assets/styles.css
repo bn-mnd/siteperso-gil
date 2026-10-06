@@ -164,7 +164,7 @@ a:hover.extra-lien {
 /* merci https://developer.mozilla.org/en-US/docs/Web/CSS/How_to/Layout_cookbook/Breadcrumb_navigation */
 
 #nouveautes, #sites-externes, #categories-blog {
-	margin: 55px;	/* pr que ça soit centré */
+	margin: 58px;	/* pr que ça soit centré mais je sais pas si ça change qqch */
 }
 
 p {
