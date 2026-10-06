@@ -80,11 +80,25 @@ html {
   color: black;
 }
 
+ul#repartition-articles-blog {
+	list-style-type: lower-roman;
+}
+
 /* https://developer.mozilla.org/fr/docs/Web/CSS/Guides/Transitions/Using */
 
 nav {
   display: flex;
   gap: 0.5rem;
+}
+
+a:not(.inter-lien), a:not(.extra-lien) {
+	transition: all 0.4s ease-out;
+}
+
+/* Malheureusement je n'aime pas quand le lien devient violet après qu'il ait été visité. Ça empiète un peu sur la navigabilité du site, mais bon... */
+/* en plus, avec transition: all 0.4s ease-out si le lien est violet l'effet devient laid */
+a:visited {
+	color: var(--default-link-color);
 }
 
 a {
@@ -102,6 +116,21 @@ a:hover.inter-lien {
 
 a:hover.extra-lien {
 	border-bottom: 2px solid var(--default-link-color);
+}
+
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/::before */
+/* https://www.compart.com/en/unicode/U+2039 */
+/* https://www.compart.com/en/unicode/U+203A */
+/* el = extra-lien, il = inter-lien */
+
+#el::before, #il::before {
+	content: "\2039";
+	margin: 0 5px;
+}
+
+#el::after, #il::after {
+	content: "\203A";
+	margin: 0 5px;
 }
 
 /* bof ça désaligne le titre de sidebar left et sidebar right */

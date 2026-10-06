@@ -27,6 +27,11 @@ li.projet {
 	list-style-type: none; /* pour enlever l'effet "bullet point" */
 }
 
+li.projet::before {
+	content: "\203b";
+	margin: 0 5px;
+}
+
 #desc-projet {
 	font-size: 0.8em;
 }
