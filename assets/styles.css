@@ -3,6 +3,7 @@ html {
   --accent-color: rgb(0, 0, 139);
   --visited-color: rgb(112, 41, 99);
 	--active-breadcrumb-page-color: #3B3B3B;
+	--default-link-color: #0000EE;
 
   --default-font: "Oswald", serif;
   --sidebar-font: "Verdana", sans-serif;
@@ -86,17 +87,21 @@ nav {
   gap: 0.5rem;
 }
 
-#bcrumb {
-	transition: none;
-}
-
 a {
   text-decoration: none; /* pas de soulignage !! c'est laid */
-  transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out; /* je pense que la keyword 'all' pose pb */
 } /* à régler: le texte qui redevient bleu accent qd on met le curseur sur un onglet alors qu'il a déjà été visité */
 
 a:hover, a:focus {
   color: black;
+}
+
+a:hover.inter-lien {
+	border-bottom: 2px dotted var(--default-link-color);
+}
+
+a:hover.extra-lien {
+	border-bottom: 2px solid var(--default-link-color);
 }
 
 /* bof ça désaligne le titre de sidebar left et sidebar right */
@@ -109,6 +114,10 @@ a:hover, a:focus {
 }
 
 /* le breadcrumb! */
+
+#bcrumb {
+  transition: none;  
+}
 
 .breadcrumb-path {
   color: #aaa;
@@ -148,14 +157,14 @@ a:hover, a:focus {
 }
 
 .breadcrumbs-link:hover {
-	text-decoration: underline;
+	text-decoration: underline dotted;
 }
 
 /* fini. merci https://www.youtube.com/watch?v=SuGMFYCWXZg */
 /* merci https://developer.mozilla.org/en-US/docs/Web/CSS/How_to/Layout_cookbook/Breadcrumb_navigation */
 
-#nouveautes, #sites-externes {
-	margin: 50px;	/* pr que ça soit centré */
+#nouveautes, #sites-externes, #categories-blog {
+	margin: 55px;	/* pr que ça soit centré */
 }
 
 p {
@@ -172,15 +181,16 @@ p {
   top: 0;
 }
 
-.sidebar-right {
+.sidebar-right, .sidebar-right-blog {
   position: absolute;
   left: calc(100% + 7rem);
   top: 0;
 }
 
-.sidebar-left, .sidebar-right {
+.sidebar-left, .sidebar-right, .sidebar-right-blog {
  	width: 20rem;
   font-family: var(--sidebar-font);
+  text-align: center;
 }
 
 #titre, #sous-titre-h4 {

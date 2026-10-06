@@ -50,61 +50,59 @@
       <br />
       <!-- à faire: si le nom d'un article de blog dépasse X caractères,
       faire en sorte que ça n'interfère pas avec le paragraphe dans
-      'main' 
+      'main' OK
 
       aussi, faire en sorte que si les articles datent de l'année
       actuelle, ils apparaissent dans "nouveautés" -->
-        <a href="#">• Quelque chose de très très très long</a><br /> <!-- dans le makefile: faire en sorte que chq article soit préfixé de • -->
-        <a href="#">• Quelque chose d'autre</a><br />
-        <a href="#">• Un autre article de blog</a><br />
-        <a href="#">• Il faut vraiment que je finisse ce site...</a><br />
-        <a href="#">• Ceci est un autre test, j'adore Jean-Luc Ponty, Weather Report, Jaco Pastorius</a><br />
-        <a href="#">• 6</a><br />
+        <a class="inter-lien" href="#">Quelque chose de très très très long</a><br /> <!-- dans le makefile: faire en sorte que chq article soit préfixé de • -->
+        <a class="inter-lien" href="#">Quelque chose d'autre</a><br />
+        <a class="inter-lien" href="#">Un autre article de blog</a><br />
+        <a class="inter-lien" href="#">Il faut vraiment que je finisse ce site...</a><br />
+        <a class="inter-lien" href="#">Ceci est un autre test, j'adore Jean-Luc Ponty, Weather Report, Jaco Pastorius</a><br />
+        <a class="inter-lien" href="#">Et bien évidemment ma chanteuse préférée Brandy Norwood</a><br />
      </div>
     
       <main>
 
       	<h2 id="titre">Présentation</h2>
       	
-        <p id="lorem-ipsum">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+        <p>
+        	Ceci est ma page personnelle que j'utilise pour centraliser mes rédactions techniques, découvertes et diverses autres choses.
         </p>
 
-				<h2 id="titre">Sections du Blog</h2>
+				<h2 id="titre">Sections du blog</h2>
         
         <p>
         	Les articles de mon blog sont répartis sous plusieurs catégories.
         	<ul id="repartition-articles-blog">
-						<li><a href="#">Programmation</a></li>
-						<li><a href="#">Reverse Engineering</a></li>
-						<li><a href="#">Hardware</a></li>
-						<li><a href="#">Opinion</a></li>
-						<li><a href="#">Référence</a></li>
+						<li><a class="inter-lien" href="#">Programmation</a></li>
+						<li><a class="inter-lien" href="#">Reverse Engineering</a></li>
+						<li><a class="inter-lien" href="#">Hardware</a></li>
+						<li><a class="inter-lien" href="#">Opinion</a></li>
+						<li><a class="inter-lien" href="#">Référence</a></li>
         	</ul>
         </p>
 
         <h2 id="titre">Notes supplémentaires</h2>
         <h4 id="sous-titre-h4">Indications pour mieux naviguer le blog:</h3>
 
-				<p id="indications">- Il y a deux types de liens : ceux qui mènent vers un site externe auront une soulignage uni, ceux qui dirigent vers un
-				élément contenu dans la page actuelle auront un soulignage en pointillés.
+				<p id="indications">- Il y a deux types de liens : ceux qui mènent vers un site externe ont un soulignage uni, ceux qui dirigent vers un
+				élément contenu dans la page actuelle (ou dans un lien inter-site) ont un soulignage en pointillés.
 				<br /><br />
+
+				- La section "nouveautés du blog" à gauche ne montre uniquement les articles publiés dans les 6 derniers mois.<br /><br />
 				
 				- (à voir si j'ajoute quelque chose d'autre). </p> 
 					
 				<h2 id="titre">Contributions</h2>
-				<p>S'il y a une erreur dans un de mes articles de blog, ou que vous souhaitez contribuer à l'un de mes projets,
-				n'hésitez pas à me contacter via l'un des moyens répertoriés dans ma page <a href="file:///home/bene/Bureau/S1-UP8/gil/siteperso/pages/apropos.html">à propos</a>.
+				<p>S'il y a une erreur ou un lien mort dans un de mes articles de blog, ou que vous souhaitez contribuer à l'un de mes projets,
+				n'hésitez pas à me contacter via l'un des moyens répertoriés dans ma page <a class="inter-lien" href="file:///home/bene/Bureau/S1-UP8/gil/siteperso/pages/apropos.html">à propos</a>.
 				</p>
 
         <h2 id="titre">Licence et crédits</h2>
         <p id="licence">
 				Copyright © ##ANNEE## Bénédicte Mendy. Tous droits réservés. 
-				Le code source et le contenu de ce site sont couverts par la <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">Licence Publique
+				Le code source et le contenu de ce site sont couverts par la <a class="extra-lien" href="https://www.gnu.org/licenses/gpl-3.0.en.html">Licence Publique
 				Générale GNU 3.0</a> telle que publiée par la Free Software Foundation. 
         </p>
 
@@ -113,14 +111,14 @@
   		<div class="sidebar-right" style="top: -99.9px">
         <span id="sites-externes">Sites intéressants</span><br />
 				<br />
-          <a href="https://docs.hex-rays.com/9.0">[Hex-Rays]</a><br />
-          <a href="https://learn.microsoft.com/fr-fr/cpp/?view=msvc-170">[MSDN]</a><br />
-          <a href="https://beginners.re/">[Dennis Yurichev "RE for Beginners"]</a><br />
-          <a href="https://pages.cs.wisc.edu/~remzi/OSTEP/">[OSTEP]</a><br />
-          <a href="https://www.vergiliusproject.com/">[Vergilius Project]</a><br />
-          <a href="https://www.geoffchappell.com/">[Geoff Chappell]</a><br />
-          <a href="https://www.intel.com/content/www/us/en/developer/articles/technical/intel-sdm.html">[Intel Developer Manual]</a><br />
-          <a href="https://revers.engineering/">[revers.engineering]</a><br />
+          <a class="extra-lien" href="https://docs.hex-rays.com/9.0">Hex-Rays</a><br />
+          <a class="extra-lien" href="https://learn.microsoft.com/fr-fr/cpp/?view=msvc-170">MSDN</a><br />
+          <a class="extra-lien" href="https://beginners.re/">Dennis Yurichev "RE for Beginners"</a><br />
+          <a class="extra-lien" href="https://pages.cs.wisc.edu/~remzi/OSTEP/">OSTEP</a><br />
+          <a class="extra-lien" href="https://www.vergiliusproject.com/">Vergilius Project</a><br />
+          <a class="extra-lien" href="https://www.geoffchappell.com/">Geoff Chappell</a><br />
+          <a class="extra-lien" href="https://www.intel.com/content/www/us/en/developer/articles/technical/intel-sdm.html">Intel Developer Manual</a><br />
+          <a class="extra-lien" href="https://revers.engineering/">revers.engineering</a><br />
       </div>
 
       
