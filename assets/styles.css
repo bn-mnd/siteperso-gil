@@ -91,7 +91,8 @@ nav {
   gap: 0.5rem;
 }
 
-a:not(.inter-lien), a:not(.extra-lien) {
+/* j'ai rajouté a:not(.title) parce que l'effet de transition était dégueulasse. la taille de la police de caractère changeait de manière grossière */
+a:not(.inter-lien), a:not(.extra-lien) a:not(.title) {
 	transition: all 0.4s ease-out;
 }
 
