@@ -6,6 +6,8 @@ title=$(head -1 "${page}")
 annee=$(date "+%Y")
 date=$(date "+%a %d %b %Y")
 
+sed "s~##TITLE##~${title}~g" layout/before.html
+
 tail -n+2 "${page}" | sed \
     -e "s~##TITLE##~${title}~g" \
     -e "s~##ANNEE##~${annee}~g"

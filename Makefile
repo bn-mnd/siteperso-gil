@@ -15,8 +15,10 @@ public:
 # toutes les pages dépendent de layout/before.html et de layout/after.html
 $(PAGES) $(CATEGORIES): layout/before.html layout/after.html
 
+# $(PAGES): public/%.html: pages/%.html
+#	cat layout/before.html > "$@"
+#	./scripts/page.sh "$<" >> "$@"
 $(PAGES): public/%.html: pages/%.html
-	cat layout/before.html > "$@"
 	./scripts/page.sh "$<" >> "$@"
 
 $(ASSETS): public/%: assets/%
