@@ -1,0 +1,42 @@
+/* merci https://htmlcolorcodes.com/colors/shades-of-blue/ */
+
+html {
+	--border-color: #00008B;
+	--project-title-font: sans-serif;
+	--project-title-color:#0000A3;
+	--default-font-family: "Verdana", sans-serif;
+}
+
+.mes-projets {
+	font-family: var(--default-font-family);
+	font-size: 1.2rem;
+	padding: 13px;
+}
+
+li.projet {
+	color: var(--project-title-color);
+	font-weight: 500;
+}
+
+li.projet {
+	border-bottom: 1.5px solid var(--border-color);
+	padding-bottom: 5px;
+}
+
+.mes-projets, li.projet {
+	list-style-type: none; /* pour enlever l'effet "bullet point" */
+}
+
+li.projet::before {
+	content: "\203b";
+	margin: 0 5px;
+}
+
+#desc-projet {
+	font-size: 0.8em;
+}
+
+#desc-projet:not(:last-of-type) {
+	border-bottom: 1px dotted var(--border-color);
+	padding-bottom: 20px;
+}
