@@ -18,6 +18,9 @@ public:
 # toutes les pages dépendent de layout/before.html et de layout/after.html
 $(PAGES) $(CATEGORIES): layout/before.html layout/after.html
 
+# si un titre dans blog.html change, alors les titres des articles de blog changent aussi grâce à cette dépendance
+$(ARTICLES): pages/blog.html
+
 $(PAGES): public/%.html: pages/%.html
 	./scripts/page.sh "$<" > "$@"
 

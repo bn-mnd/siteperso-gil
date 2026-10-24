@@ -10,6 +10,7 @@ sed "s~##TITLE##~${title}~g" layout/before.html
 
 tail -n+2 "${page}" | sed \
     -e "s~##TITLE##~${title}~g" \
-    -e "s~##ANNEE##~${annee}~g"
+    -e "s~##ANNEE##~${annee}~g" \
+    -e "s~##ARTICLE-TITLE##~${title}~g"
 
 sed "s~##DATE##~${date}~g" layout/after.html
