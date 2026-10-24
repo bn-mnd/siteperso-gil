@@ -32,11 +32,7 @@ h3 {
 	font-size: 0.75em;
 	color: #7b7b7b;
 }
-
-.description-article {
-	padding: 0px 0px 0px 0px;
-}
-
+	
 .categorie-article {
 	font-size: 0.85em;
 	float: right;
@@ -51,10 +47,6 @@ h3 {
 .categorie-article::after {
 	content: "\203A";
 	margin: 0 5px;
-}
-
-#article-1 {
-	position: relative;
 }
 
 
