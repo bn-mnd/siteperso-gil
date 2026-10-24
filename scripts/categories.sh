@@ -3,4 +3,9 @@
 page=${1:?Fichier html non spécifié}
 
 categorie=$(head -1 "${page}")
-tail -n+2 "${page}" | sed "s~##CAT##~${categorie}~"
+date=$(date "+%a %d %b %Y")
+
+sed "s~##TITLE##~catégorie : ${categorie}~g" layout/before.html
+tail -n+2 "${page}" | sed "s~##CAT##~${categorie}~g"
+
+sed "s~##DATE##~${date}~g" layout/after.html

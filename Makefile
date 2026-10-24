@@ -7,7 +7,10 @@ CATEGORIES := $(subst categories/,public/,$(CATEGORIES_SRC))
 ASSETS_SRC := $(wildcard assets/*)
 ASSETS := $(subst assets/,public/,$(ASSETS_SRC))
 
-all: $(PAGES) $(ASSETS) $(CATEGORIES)
+ARTICLES_SRC := $(wildcard articles/*)
+ARTICLES := $(subst articles/,public/,$(ARTICLES_SRC))
+
+all: $(PAGES) $(ASSETS) $(CATEGORIES) $(ARTICLES)
 
 public:
 	mkdir public
@@ -22,8 +25,10 @@ $(ASSETS): public/%: assets/%
 	cp "$<" "$@"
 
 $(CATEGORIES): public/%.html: categories/%.html
-	cat layout/before.html > "$@"
-	./scripts/categories.sh "$<" >> "$@"
+	./scripts/categories.sh "$<" > "$@"
+
+$(ARTICLES): public/%.html: articles/%.html
+	./scripts/page.sh "$<" > "$@"
 
 .PHONY: all clean
 
