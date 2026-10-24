@@ -18,8 +18,10 @@ public:
 # toutes les pages dépendent de layout/before.html et de layout/after.html
 $(PAGES) $(CATEGORIES): layout/before.html layout/after.html
 
-# si un titre dans blog.html change, alors les titres des articles de blog changent aussi grâce à cette dépendance
-$(ARTICLES): pages/blog.html
+# blog.html doit dépendre des articles, pas l'inverse.... oups
+# idem pour les pages des catégories. le titre des articles va s'actualiser en fonction des pages. donc j'ajoute cette target
+# et le script bash actualisera les pages...
+# pages/blog.html $(CATEGORIES): $(ARTICLES_SRC) <- trop compliqué à implémenter, donc c'est fait manuellement.
 
 $(PAGES): public/%.html: pages/%.html
 	./scripts/page.sh "$<" > "$@"
