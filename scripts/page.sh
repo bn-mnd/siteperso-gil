@@ -13,4 +13,3 @@ tail -n+2 "${page}" | sed \
     -e "s~##ANNEE##~${annee}~g"
 
 sed "s~##DATE##~${date}~g" layout/after.html
-

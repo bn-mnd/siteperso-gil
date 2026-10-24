@@ -3,4 +3,4 @@
 page=${1:?Fichier html non spécifié}
 
 categorie=$(head -1 "${page}")
-tail -n+2 "${page}" | sed -e "s~##CAT##~${categorie}~"
+tail -n+2 "${page}" | sed "s~##CAT##~${categorie}~"

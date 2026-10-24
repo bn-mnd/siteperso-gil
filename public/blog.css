@@ -2,4 +2,24 @@
 	--blog-accent-color: #0047AB;
 }
 
+.articles-blog {
+	list-style-type: none;
+	padding: 0;
+	border: 1px solid #ddd;
+}
 
+.articles-blog, .titre-article {
+	font-family: sans-serif;
+	padding: 8px 16px;
+	border-bottom: 1px solid #ddd;
+}
+
+
+/* .articles-blog, .sous-article:last-child {
+	border-bottom: none;
+} */
+
+#desc-article {
+	font-family: sans-serif;
+	padding: 8px 16px;
+}
